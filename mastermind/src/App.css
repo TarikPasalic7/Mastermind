@@ -133,3 +133,15 @@ transition: all 120ms;
   margin-top: 20px;
   display: flex;
 }
+
+.playcontainer{
+  display: inline-block;
+
+  background-color: rgb(170, 184, 178);
+  margin: 50px auto;
+  height: 70%;
+  width: 70%;
+  border-radius: 8px;
+  border:black solid 1px;
+
+}
