@@ -1,5 +1,6 @@
 
 import React  from "react"
+import Colorpicker from "./Colorpicker"
 const Gameboard =()=>{
 
 return(
@@ -8,6 +9,7 @@ return(
  
     <div className="boardcontainer">
     gameboard
+    <Colorpicker/>
 </div>
 
 )

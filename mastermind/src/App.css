@@ -4,13 +4,132 @@
 
 .boardcontainer{
 
-display: flex;
+display: inline-block;
 
-background-color: rgb(26, 106, 64);
+background-color: rgb(170, 184, 178);
 margin: 50px auto;
 height: 500px;
-width: 300px;
+width: 350px;
 border-radius: 8px;
 
 
+}
+
+.red{
+background-color: red;
+
+width: 13%;
+margin-left: 16px;
+margin-right: 5px;
+height: 34px;
+border-radius: 100%;
+border:solid black 1px;
+
+transition: all 120ms;
+
+}
+.red:hover {
+  transform: scale(1.2);
+ 
+  cursor: pointer;
+  z-index: 1;
+}
+.green{
+
+  background-color: rgb(142, 225, 101);
+  margin-right: 5px;
+width: 13%;
+height: 34px;
+border-radius: 100%;
+border:solid black 1px;
+
+transition: all 120ms;
+}
+
+.green:hover{
+
+  transform: scale(1.2);
+ 
+  cursor: pointer;
+  z-index: 1;
+}
+.yellow{
+
+  background-color: rgb(234, 242, 77);
+  margin-right: 5px;
+width: 13%;
+height: 34px;
+border-radius: 100%;
+border:solid black 1px;
+
+transition: all 120ms;
+}
+
+.yellow:hover{
+
+  transform: scale(1.2);
+ 
+  cursor: pointer;
+  z-index: 1;
+}
+.blue{
+
+  background-color: rgb(68, 201, 206);
+  margin-right: 5px;
+width: 13%;
+height: 34px;
+border-radius: 100%;
+border:solid black 1px;
+
+transition: all 120ms;
+}
+
+.blue:hover{
+
+  transform: scale(1.2);
+ 
+  cursor: pointer;
+  z-index: 1;
+}
+.orange{
+
+  background-color: rgb(220, 129, 45);
+  margin-right: 5px;
+width:13%;
+height: 34px;
+border-radius: 100%;
+border:solid black 1px;
+
+transition: all 120ms;
+}
+
+.orange:hover{
+
+  transform: scale(1.2);
+ 
+  cursor: pointer;
+  z-index: 1;
+}
+.purple{
+
+  background-color: rgb(111, 59, 111);
+  margin-right: 5px;
+width: 13%;
+height: 34px;
+border-radius: 100%;
+border:solid black 1px;
+
+transition: all 120ms;
+}
+
+.purple:hover{
+
+  transform: scale(1.2);
+ 
+  cursor: pointer;
+  z-index: 1;
+}
+.colorpicker{
+  margin-top: 20px;
+  display: flex;
 }
