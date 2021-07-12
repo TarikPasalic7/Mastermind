@@ -1,13 +1,13 @@
 
 import React,{useEffect,useState}  from "react"
 import Colorpicker from "./Colorpicker"
-import PLayingboard from "./Playingboard"
+import Board from "./Board"
 import Rules from "./Rules"
 const Gameboard =()=>{
    
 
     const [showrules,setShowrules]=useState(false);
-    
+    const [color,setcolor]=useState("");
     
 
     const rules =()=>{
@@ -15,7 +15,12 @@ const Gameboard =()=>{
           
     }
     
+ const pickAcolor=(e)=>{
 
+ setcolor(e.target.value);
+   
+
+ }
     
 
 
@@ -31,8 +36,8 @@ return(
 
 
     {showrules?<Rules/>:""}
-    <Colorpicker/>
-    <PLayingboard/>
+    <Colorpicker pickAcolor={pickAcolor}/>
+    <Board/>
 </div>
 
 )

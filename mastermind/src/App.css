@@ -142,7 +142,7 @@ transition: all 120ms;
 
   background-color: rgb(170, 184, 178);
   margin: 20px auto;
-  height: 66%;
+  height: 56%;
   width: 50%;
   border-radius: 8px;
   border:black solid 1px;
@@ -159,13 +159,19 @@ border:solid black 1px;
 
 transition: all 120ms;
 
+}
+.circle:hover{
 
+  transform: scale(1.2);
+ 
+  cursor: pointer;
+  z-index: 1;
 }
 
 .boardrow{
   margin: 5px;
   display:flex;
-  padding: 10px;
+  padding: 5px;
 }
 
 .squarecontainer{
