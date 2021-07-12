@@ -11,7 +11,7 @@ return(
     
  
     <div className="colorpicker">
-    <button className="red" id="red" value="red" onClick={pickAcolor} ></button>
+    <button className="red" id="red" value="redc" onClick={pickAcolor} ></button>
     <button className="green" id="green" value="green"  onClick={pickAcolor} ></button>
     <button className="yellow" id="yellow" value="yellow"  onClick={pickAcolor} ></button>
     <button className="blue"   id="blue" value="blue"  onClick={pickAcolor}></button>

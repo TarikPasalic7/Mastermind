@@ -35,6 +35,25 @@ transition: all 120ms;
   cursor: pointer;
   z-index: 1;
 }
+.redc{
+  background-color: red;
+  
+  width: 6%;
+
+  margin-right: 5px;
+  height: 24px;
+  border-radius: 100%;
+  border:solid black 1px;
+  
+  transition: all 120ms;
+  
+  }
+  .redc:hover {
+    transform: scale(1.2);
+   
+    cursor: pointer;
+    z-index: 1;
+  }
 .green{
 
   background-color: rgb(142, 225, 101);

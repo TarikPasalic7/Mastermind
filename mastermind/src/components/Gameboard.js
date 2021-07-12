@@ -37,7 +37,7 @@ return(
 
     {showrules?<Rules/>:""}
     <Colorpicker pickAcolor={pickAcolor}/>
-    <Board/>
+    <Board color={color}/>
 </div>
 
 )

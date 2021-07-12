@@ -1,17 +1,81 @@
 
-import React  from "react"
-const Row =({isdisabled})=>{
+import React,{useEffect,useState}  from "react"
+const Row =({isdisabled,color})=>{
 console.log(isdisabled);
+console.log(color)
+const [circlecolor,setcirclecolor]=useState("")
+const [circle,setcircle]=useState([{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""}]);
+const addcolor=(e)=>{
+let cir=e.target.id;
+console.log(cir);
+if(cir==="circle1"){
+   
+    let newArr = [...circle]; 
+    newArr[0].iscolor=true; 
+    newArr[0].color=color; 
+    
+  
+
+    setcircle(newArr);
+    
+}
+if(cir==="circle1"){
+   
+    let newArr = [...circle]; 
+    newArr[0].iscolor=true; 
+    newArr[0].color=color; 
+    
+  
+
+    setcircle(newArr);
+    
+}
+if(cir==="circle2"){
+   
+    let newArr = [...circle]; 
+    newArr[1].iscolor=true; 
+    newArr[1].color=color; 
+    
+  
+
+    setcircle(newArr);
+    
+}
+if(cir==="circle3"){
+   
+    let newArr = [...circle]; 
+    newArr[2].iscolor=true; 
+    newArr[2].color=color; 
+    
+  
+
+    setcircle(newArr);
+    
+}
+if(cir==="circle4"){
+   
+    let newArr = [...circle]; 
+    newArr[3].iscolor=true; 
+    newArr[3].color=color; 
+    
+  
+
+    setcircle(newArr);
+    
+}
+   
+    
+}
 return(
 
     
  
     <button className="boardrow" disabled={isdisabled?false:true}>
-     <button className="circle" ></button>
-     <button className="circle" ></button>
-     <button className="circle" ></button>
-     <button className="circle"></button>
-     <button  >check</button>
+     {!circle[0].iscolor?<button onClick={addcolor} className="circle" id="circle1" ></button>:<button onClick={addcolor}  id="circle1" className={circle[0].color} ></button>}
+     {!circle[1].iscolor?<button onClick={addcolor} className="circle" id="circle2" ></button>:<button onClick={addcolor}  id="circle2" className={circle[1].color} ></button>}
+     {!circle[2].iscolor?<button onClick={addcolor} className="circle" id="circle3" ></button>:<button onClick={addcolor}  id="circle3" className={circle[2].color} ></button>}
+     {!circle[3].iscolor?<button onClick={addcolor} className="circle" id="circle4" ></button>:<button onClick={addcolor}  id="circle4" className={circle[3].color} ></button>}
+     <button>check</button>
      <div className="squarecontainer"> 
          <div className="square"></div>
          <div className="square"></div>
