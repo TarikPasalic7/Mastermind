@@ -8,6 +8,20 @@ const Gameboard =()=>{
 
     const [showrules,setShowrules]=useState(false);
     const [color,setcolor]=useState("");
+    const [code,setcode]=useState([]);
+
+    useEffect(() => {
+       let temp=[];
+        let arr=["red","green","yellow","blue","orange","purple"];
+       
+     for (let index = 0; index <4; index++) {
+        let idx = Math.floor(Math.random()*arr.length);
+        temp[index]=arr[idx];
+         
+     }
+     setcode(temp);
+
+    }, [])
     
 
     const rules =()=>{
@@ -38,7 +52,7 @@ return(
 
     {showrules?<Rules/>:""}
     <Colorpicker pickAcolor={pickAcolor}/>
-    <Board color={color}/>
+    <Board code={code} color={color}/>
 </div>
 
 )

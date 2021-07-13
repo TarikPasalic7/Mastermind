@@ -3,7 +3,6 @@ import React,{useEffect,useState}  from "react"
 const Row =({isdisabled,color,check})=>{
 console.log(isdisabled);
 console.log(color)
-const [circlecolor,setcirclecolor]=useState("")
 const [circle,setcircle]=useState([{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""}]);
 const addcolor=(e)=>{
 let cir=e.target.id;

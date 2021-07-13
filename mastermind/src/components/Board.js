@@ -2,8 +2,8 @@
 import React,{useState}  from "react"
 import Row from "./Row"
 
-const Board =({color})=>{
-
+const Board =({color,code})=>{
+    const [usercode,setusercode]=[];
     const [nextrow,setnextrow]=useState([{row1:true},{row2:false},{row3:false},{row4:false},{row5:false},
         {row6:false},{row7:false},{row8:false},{row9:false},{row10:false}]);
 
@@ -22,8 +22,8 @@ return(
     
  
     <div className="playcontainer">
-        <Row color={color} check={check} isdisabled={nextrow[0].row1} />
-        <Row color={color} check={check} isdisabled={nextrow[1].row2} />
+        <Row color={color} check={check}  isdisabled={nextrow[0].row1} />
+        <Row color={color} check={check}  isdisabled={nextrow[1].row2} />
         <Row isdisabled={nextrow[2].row3}/>
         <Row isdisabled={nextrow[3].row4}/>
         <Row isdisabled={nextrow[4].row5}/>
