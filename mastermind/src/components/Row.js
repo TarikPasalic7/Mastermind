@@ -1,6 +1,6 @@
 
 import React,{useEffect,useState}  from "react"
-const Row =({isdisabled,color})=>{
+const Row =({isdisabled,color,check})=>{
 console.log(isdisabled);
 console.log(color)
 const [circlecolor,setcirclecolor]=useState("")
@@ -71,12 +71,12 @@ return(
     
  
     <button className="boardrow" disabled={isdisabled?false:true}>
-     {!circle[0].iscolor?<button onClick={addcolor} className="circle" id="circle1" ></button>:<button onClick={addcolor}  id="circle1" className={circle[0].color} ></button>}
-     {!circle[1].iscolor?<button onClick={addcolor} className="circle" id="circle2" ></button>:<button onClick={addcolor}  id="circle2" className={circle[1].color} ></button>}
-     {!circle[2].iscolor?<button onClick={addcolor} className="circle" id="circle3" ></button>:<button onClick={addcolor}  id="circle3" className={circle[2].color} ></button>}
-     {!circle[3].iscolor?<button onClick={addcolor} className="circle" id="circle4" ></button>:<button onClick={addcolor}  id="circle4" className={circle[3].color} ></button>}
-     <button>check</button>
-     <div className="squarecontainer"> 
+     {!circle[0].iscolor?<button onClick={addcolor} className="circle" id="circle1"  disabled={isdisabled?false:true}></button>:<button onClick={addcolor}  id="circle1" className={circle[0].color} disabled={isdisabled?false:true} ></button>}
+     {!circle[1].iscolor?<button onClick={addcolor} className="circle" id="circle2" disabled={isdisabled?false:true} ></button>:<button onClick={addcolor}  id="circle2" className={circle[1].color} disabled={isdisabled?false:true}></button>}
+     {!circle[2].iscolor?<button onClick={addcolor} className="circle" id="circle3" disabled={isdisabled?false:true} ></button>:<button onClick={addcolor}  id="circle3" className={circle[2].color} disabled={isdisabled?false:true}></button>}
+     {!circle[3].iscolor?<button onClick={addcolor} className="circle" id="circle4"  disabled={isdisabled?false:true}></button>:<button onClick={addcolor}  id="circle4" className={circle[3].color}disabled={isdisabled?false:true} ></button>}
+     <button onClick={check}>check</button>
+     <div  className="squarecontainer"> 
          <div className="square"></div>
          <div className="square"></div>
          <div className="square"></div>
