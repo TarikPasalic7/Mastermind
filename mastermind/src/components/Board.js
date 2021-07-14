@@ -10,10 +10,19 @@ const Board =({color,code,updateWinner,updateLoser})=>{
       
         const [pegGuess,setpegGuess] =useState([[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}]
         ,[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}]]);
+        
+        useEffect(() => {
+            setpegGuess([[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}]
+            ,[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}],
+            [{col:""},{col:""},{col:""},{col:""}],[{col:""},{col:""},{col:""},{col:""}]]);
+            setnextrow([{row:true},{row:false},{row:false},{row:false},{row:false},
+             {row:false},{row:false},{row:false},{row:false},{row:false}])
+         }, [code])
         const check =(usercode,index)=>{
         let counter=0;
        
         console.log(code);
+ 
        
         for (let index = 0; index < usercode.length; index++) {
            if(usercode[index].iscolor==true)
@@ -119,16 +128,16 @@ return(
     
  
     <div className="playcontainer">
-        <Row check={check} color={color} index={0} pegGuess={pegGuess} isdisabled={nextrow[0].row} />
-        <Row  check={check} color={color} index={1}  pegGuess={pegGuess} isdisabled={nextrow[1].row} />
-        <Row  check={check} color={color} index={2}  pegGuess={pegGuess} isdisabled={nextrow[2].row} />
-        <Row  check={check} color={color} index={3}  pegGuess={pegGuess}  isdisabled={nextrow[3].row} />
-        <Row  check={check} color={color} index={4}  pegGuess={pegGuess}  isdisabled={nextrow[4].row} />
-        <Row  check={check} color={color} index={5} pegGuess={pegGuess} isdisabled={nextrow[5].row} />
-        <Row   check={check} color={color} index={6} pegGuess={pegGuess} isdisabled={nextrow[6].row} />
-        <Row  check={check} color={color} index={7} pegGuess={pegGuess} isdisabled={nextrow[7].row} />
-        <Row  check={check} color={color} index={8} pegGuess={pegGuess} isdisabled={nextrow[8].row} />
-        <Row  check={check} color={color} index={9}  pegGuess={pegGuess} isdisabled={nextrow[9].row} />
+        <Row check={check} color={color} index={0} code={code} pegGuess={pegGuess} isdisabled={nextrow[0].row} />
+        <Row  check={check} color={color} index={1} code={code} pegGuess={pegGuess} isdisabled={nextrow[1].row} />
+        <Row  check={check} color={color} index={2} code={code}  pegGuess={pegGuess} isdisabled={nextrow[2].row} />
+        <Row  check={check} color={color} index={3} code={code} pegGuess={pegGuess}  isdisabled={nextrow[3].row} />
+        <Row  check={check} color={color} index={4} code={code} pegGuess={pegGuess}  isdisabled={nextrow[4].row} />
+        <Row  check={check} color={color} index={5} code={code} pegGuess={pegGuess} isdisabled={nextrow[5].row} />
+        <Row   check={check} color={color} index={6} code={code} pegGuess={pegGuess} isdisabled={nextrow[6].row} />
+        <Row  check={check} color={color} index={7} code={code} pegGuess={pegGuess} isdisabled={nextrow[7].row} />
+        <Row  check={check} color={color} index={8} code={code} pegGuess={pegGuess} isdisabled={nextrow[8].row} />
+        <Row  check={check} color={color} index={9}  code={code} pegGuess={pegGuess} isdisabled={nextrow[9].row} />
     
         
       

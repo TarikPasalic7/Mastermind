@@ -1,9 +1,11 @@
 
 import React,{useEffect,useState}  from "react"
 let columnvalidation=[{col:""},{col:""},{col:""},{col:""}];
-const Row =({isdisabled,check,color, pegGuess,index})=>{
+const Row =({isdisabled,check,color, pegGuess,index,code})=>{
     const [circle,setcircle]=useState([{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""}]);
-  
+    useEffect(() => {
+       setcircle([{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""}])
+    }, [code])
 
     const addcolor=(e)=>{
         let cir=e.target.id;
