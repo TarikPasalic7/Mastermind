@@ -222,3 +222,11 @@ margin-top: 4px;
 font-style:oblique;
 
 }
+.col-green{
+
+  background-color: rgb(63, 162, 91);
+}
+.col-yellow{
+
+  background-color: rgb(255, 255, 18)
+}

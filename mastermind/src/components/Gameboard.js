@@ -9,10 +9,12 @@ const Gameboard =()=>{
     const [showrules,setShowrules]=useState(false);
     const [color,setcolor]=useState("");
     const [code,setcode]=useState([]);
+    const [winner,setwiner]=useState(false);
+    const [loser,setloser]=useState(false);
 
     useEffect(() => {
        let temp=[];
-        let arr=["red","green","yellow","blue","orange","purple"];
+        let arr=["redc","green","yellow","blue","orange","purple"];
        
      for (let index = 0; index <4; index++) {
         let idx = Math.floor(Math.random()*arr.length);
@@ -23,7 +25,17 @@ const Gameboard =()=>{
 
     }, [])
     
+    const updateWinner=()=>{
+     
+    setwiner(true);
 
+    }
+    const updateLoser=()=>{
+     
+        setloser(true);
+    
+        }
+     
     const rules =()=>{
     setShowrules(!showrules);
           
@@ -52,7 +64,9 @@ return(
 
     {showrules?<Rules/>:""}
     <Colorpicker pickAcolor={pickAcolor}/>
-    <Board code={code} color={color}/>
+    <Board code={code} color={color}  updateLoser={updateLoser} updateWinner={updateWinner}/>
+    {winner?<div>You won</div>:null}
+    {loser?<div>You lost</div>:null}
 </div>
 
 )
