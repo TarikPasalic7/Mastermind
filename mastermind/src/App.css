@@ -36,7 +36,7 @@ transition: all 120ms;
   z-index: 1;
 }
 .redc{
-  background-color: red;
+  background-color: red!important; 
   
   width: 6%;
 
@@ -56,7 +56,7 @@ transition: all 120ms;
   }
 .green{
 
-  background-color: rgb(142, 225, 101);
+  background-color: rgb(142, 225, 101)!important;
   margin-right: 5px;
   width: 6%;
 height: 24px;
@@ -75,7 +75,7 @@ transition: all 120ms;
 }
 .yellow{
 
-  background-color: rgb(234, 242, 77);
+  background-color: rgb(234, 242, 77)!important;
   margin-right: 5px;
   width: 6%;
 height: 24px;
@@ -94,7 +94,7 @@ transition: all 120ms;
 }
 .blue{
 
-  background-color: rgb(68, 201, 206);
+  background-color: rgb(68, 201, 206)!important;
   margin-right: 5px;
   width: 6%;
 height: 24px;
@@ -113,7 +113,7 @@ transition: all 120ms;
 }
 .orange{
 
-  background-color: rgb(220, 129, 45);
+  background-color: rgb(220, 129, 45)!important;
   margin-right: 5px;
   width: 6%;
 height: 24px;
@@ -132,7 +132,7 @@ transition: all 120ms;
 }
 .purple{
 
-  background-color: rgb(111, 59, 111);
+  background-color: rgb(111, 59, 111)!important;
   margin-right: 5px;
   width: 6%;
 height: 24px;
