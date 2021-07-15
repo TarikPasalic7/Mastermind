@@ -1,10 +1,10 @@
 
-import React,{useEffect,useState,useReducer}  from "react"
+import React,{useEffect,useState}  from "react"
 import Peg from "./Peg"
 let columnvalidation=[{col:""},{col:""},{col:""},{col:""}];
 const Row =({isdisabled,check,color, pegGuess,index,code})=>{
     const [circle,setcircle]=useState([{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""}]);
-    const [, update] = useReducer(x => x + 1, 0);
+    const [checkEnabled,setCheckEnabled]=useState(false);
     useEffect(() => {
        setcircle([{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""}])
     }, [code])
@@ -58,6 +58,9 @@ const Row =({isdisabled,check,color, pegGuess,index,code})=>{
             setcircle(newArr);
             
         }
+if(circle[0].iscolor && circle[1].iscolor && circle[2].iscolor && circle[3].iscolor  )
+    setCheckEnabled(true);
+
         }
    
     
@@ -72,7 +75,7 @@ return(
     {!circle[1].iscolor?<Peg  addcolor={addcolor} clsname=""  pegid={"circle2"}  disabled={isdisabled?false:true}/> :<Peg addcolor={addcolor} pegid={"circle2"}   clsname={`${circle[1].color} `} disabled={isdisabled?false:true}/>}
     {!circle[2].iscolor?<Peg  addcolor={addcolor} clsname=""  pegid={"circle3"}  disabled={isdisabled?false:true}/> :<Peg addcolor={addcolor} pegid={"circle3"}   clsname={`${circle[2].color} `} disabled={isdisabled?false:true}/>}
     {!circle[3].iscolor?<Peg  addcolor={addcolor} clsname=""  pegid={"circle4"} disabled={isdisabled?false:true}/> :<Peg addcolor={addcolor}  pegid={"circle4"}  clsname={`${circle[3].color} `} disabled={isdisabled?false:true}/>}
-     <button onClick={()=>check(circle,index)}>check</button>
+     <button onClick={()=>check(circle,index)} disabled={checkEnabled?false:true} >check</button>
      <div  className="squarecontainer"> 
         
 

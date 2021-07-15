@@ -4,6 +4,7 @@ import Colorpicker from "./Colorpicker"
 import Board from "./Board"
 import Rules from "./Rules"
 import Loser from "./Loser"
+import Winner from "./Winner"
 const Gameboard =()=>{
    
 
@@ -84,7 +85,7 @@ return(
     {showrules?<Rules/>:""}
     <Colorpicker pickAcolor={pickAcolor}/>
     <Board code={code} color={color}  updateLoser={updateLoser} updateWinner={updateWinner}/>
-    {winner?<div>You won</div>:null}
+    {winner?<Winner reset={reset}/>:null}
     {loser?  <Loser code={code} reset={reset}/>:null}
   
 </div>
