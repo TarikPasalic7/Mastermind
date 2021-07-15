@@ -83,7 +83,7 @@ const Board =({color,code,updateWinner,updateLoser})=>{
            for (let j = 0; j < code.length; j++) {
 
             for (let i = 0; i < usercode.length; i++) {
-                if(code[i]==usercode[j].color && i==j)
+                if(code[i]==usercode[j].color && i===j)
                 correctcolor--;
                 
             }
