@@ -77,7 +77,7 @@ return(
     
  
     <div className="boardcontainer">
-    gameboard
+   <h2>MASTERMIND</h2>
     <div className="showrules"  onClick={rules}>{showrules?"Hide rules":"Show rules"}</div>
 
 

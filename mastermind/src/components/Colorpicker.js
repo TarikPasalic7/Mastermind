@@ -2,10 +2,7 @@
 import React  from "react"
 const Colorpicker =({pickAcolor})=>{
 
-    const color=(e)=>{
-   let t=e.target.value;
-        console.log(t);
-    }
+   
 return(
 
     

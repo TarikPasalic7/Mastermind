@@ -20,17 +20,16 @@ const Board =({color,code,updateWinner,updateLoser})=>{
          }, [code])
         const check =(usercode,index)=>{
         let counter=0;
-       
-        console.log(code);
+    
  
        
         for (let index = 0; index < usercode.length; index++) {
-           if(usercode[index].iscolor==true)
+           if(usercode[index].iscolor===true)
            counter++;
             
         }
         
-        if(counter!=4)
+        if(counter!==4)
         {
             return
         }
@@ -70,32 +69,15 @@ const Board =({color,code,updateWinner,updateLoser})=>{
                return;
                
            }
-          let arrc=[0,0,0,0];
-         /**   for (let i = 0; i < usercode.length; i++) {
        
-            for (let j = 0; j <code.length; j++) {
-                if(usercode[i].color===code[j])
-                {
-                  
-                    if(i!=j)
-                    {
-                     arrc[i]++;
-                     break;
-                    }
-                    
-                }
-                
-                
-            }
-              
-           }*/
+       
 
-           let samecolor=0;
+          // let samecolor=0;
            
   for (let j = 0; j < code.length; j++) {
   
 for (let i = 0; i < usercode.length; i++) {
-   if(code[j]===usercode[i].color && i!=j)
+   if(code[j]===usercode[i].color && i!==j)
    {
        correctcolor++;
         break;
@@ -106,7 +88,7 @@ for (let i = 0; i < usercode.length; i++) {
 
 
 }
-           for (let i = 0; i < code.length; i++) {
+         /**   for (let i = 0; i < code.length; i++) {
        
             for (let j = i+1; j <code.length; j++) {
                 if(code[i]===code[j])
@@ -119,15 +101,9 @@ for (let i = 0; i < usercode.length; i++) {
                 
             }
               
-           }
-      let sum=0
-      for (let i = 0; i < arrc.length; i++) {
-          sum += arrc[i];
-          
-      }
-      console.log(samecolor);
-      console.log(sum)
-      console.log(correct);
+           }*/
+    
+      
    
         correctcolor=correctcolor-correct;
      
