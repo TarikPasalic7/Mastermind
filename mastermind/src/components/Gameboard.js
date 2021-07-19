@@ -24,7 +24,7 @@ const Gameboard =()=>{
          
      }
      setcode(temp);
-     console.log(temp)
+    
 
     }, [])
     

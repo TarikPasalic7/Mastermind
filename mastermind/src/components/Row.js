@@ -9,9 +9,11 @@ const Row =({isdisabled,check,color, pegGuess,index,code})=>{
        setcircle([{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""}])
     }, [code])
 
+
+
     const addcolor=(e)=>{
         let cir=e.target.id;
-      
+      console.log()
     
         if(cir==="circle1"){
            
@@ -19,7 +21,7 @@ const Row =({isdisabled,check,color, pegGuess,index,code})=>{
             newArr[0].iscolor=true; 
             newArr[0].color=color; 
             
-          console.log(color)
+       
         
             setcircle(newArr);
            
@@ -71,10 +73,10 @@ return(
  
     <button className="boardrow" disabled={isdisabled?false:true} >
   
-    {!circle[0].iscolor?<Peg  addcolor={addcolor} clsname=""  pegid={"circle1"} disabled={isdisabled?false:true}/> :<Peg addcolor={addcolor} pegid={"circle1"}   clsname={`${circle[0].color} `} disabled={isdisabled?false:true}/>}
-    {!circle[1].iscolor?<Peg  addcolor={addcolor} clsname=""  pegid={"circle2"}  disabled={isdisabled?false:true}/> :<Peg addcolor={addcolor} pegid={"circle2"}   clsname={`${circle[1].color} `} disabled={isdisabled?false:true}/>}
-    {!circle[2].iscolor?<Peg  addcolor={addcolor} clsname=""  pegid={"circle3"}  disabled={isdisabled?false:true}/> :<Peg addcolor={addcolor} pegid={"circle3"}   clsname={`${circle[2].color} `} disabled={isdisabled?false:true}/>}
-    {!circle[3].iscolor?<Peg  addcolor={addcolor} clsname=""  pegid={"circle4"} disabled={isdisabled?false:true}/> :<Peg addcolor={addcolor}  pegid={"circle4"}  clsname={`${circle[3].color} `} disabled={isdisabled?false:true}/>}
+    {!circle[0].iscolor?<Peg  addcolor={addcolor} clsname=""  pegid={"circle1"}  isdisabled={isdisabled}/> :<Peg addcolor={addcolor} pegid={"circle1"}   clsname={`${circle[0].color} `} isdisabled={isdisabled}/>}
+    {!circle[1].iscolor?<Peg  addcolor={addcolor} clsname=""  pegid={"circle2"}  isdisabled={isdisabled}/> :<Peg addcolor={addcolor} pegid={"circle2"}   clsname={`${circle[1].color} `} isdisabled={isdisabled}/>}
+    {!circle[2].iscolor?<Peg  addcolor={addcolor} clsname=""  pegid={"circle3"} isdisabled={isdisabled}/> :<Peg addcolor={addcolor} pegid={"circle3"}   clsname={`${circle[2].color} `} isdisabled={isdisabled}/>}
+    {!circle[3].iscolor?<Peg  addcolor={addcolor} clsname=""  pegid={"circle4"} isdisabled={isdisabled}/> :<Peg addcolor={addcolor}  pegid={"circle4"}  clsname={`${circle[3].color} `} isdisabled={isdisabled}/>}
      <button onClick={()=>check(circle,index)} disabled={checkEnabled?false:true} >check</button>
      <div  className="squarecontainer"> 
         

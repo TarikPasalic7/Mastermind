@@ -92,8 +92,8 @@ for (let i = 0; i < usercode.length; i++) {
 
 
 }
-          let samecolor=0;
-          let colorindex=-1;
+         
+         
           //debugger;   
       for (let i = 0; i < codecolor.length; i++) {
        
@@ -113,11 +113,8 @@ for (let i = 0; i < usercode.length; i++) {
      
       
    
-       console.log(codecolor);
-     console.log(samecolor);
      
-      
-        correctcolor=correctcolor;
+
       
     
          
@@ -135,7 +132,7 @@ for (let i = 0; i < usercode.length; i++) {
               
           }
            setpegGuess(arr2)
-           console.log(pegGuess[0][0]);
+     
            for (let i = 0; i < nextrow.length; i++) {
               if(nextrow[i].row===true)
               {
@@ -160,6 +157,7 @@ return(
     
  
     <div className="playcontainer">
+     
         <Row check={check} color={color} index={0} code={code} pegGuess={pegGuess} isdisabled={nextrow[0].row} />
         <Row  check={check} color={color} index={1} code={code} pegGuess={pegGuess} isdisabled={nextrow[1].row} />
         <Row  check={check} color={color} index={2} code={code}  pegGuess={pegGuess} isdisabled={nextrow[2].row} />
