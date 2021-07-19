@@ -24,6 +24,7 @@ const Gameboard =()=>{
          
      }
      setcode(temp);
+     console.log(temp)
 
     }, [])
     
@@ -85,7 +86,7 @@ return(
     {showrules?<Rules/>:""}
     <Colorpicker pickAcolor={pickAcolor}/>
     <Board code={code} color={color}  updateLoser={updateLoser} updateWinner={updateWinner}/>
-    {winner?<Winner reset={reset}/>:null}
+    {winner?<Winner  code={code} reset={reset}/>:null}
     {loser?  <Loser code={code} reset={reset}/>:null}
   
 </div>

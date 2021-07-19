@@ -21,7 +21,7 @@ const Board =({color,code,updateWinner,updateLoser})=>{
         const check =(usercode,index)=>{
         let counter=0;
     
- 
+        let equalcode=[false,false,false,false];
        
         for (let index = 0; index < usercode.length; index++) {
            if(usercode[index].iscolor===true)
@@ -33,27 +33,29 @@ const Board =({color,code,updateWinner,updateLoser})=>{
         {
             return
         }
+     
         else{
             let correct=0;
             let correctcolor=0;
            if(code[0]===usercode[0].color)
            {
                correct++;
-           
+                equalcode[0]=true;
            }    
            if(code[1]===usercode[1].color)
            {
                correct++;
-           
+               equalcode[1]=true;
            } 
            if(code[2]===usercode[2].color)
            {
             correct++;
-           
+            equalcode[2]=true;
            } 
             if(code[3]===usercode[3].color)
            {
             correct++;
+            equalcode[3]=true;
             
            }
            if(correct===4)
@@ -72,15 +74,17 @@ const Board =({color,code,updateWinner,updateLoser})=>{
        
        
 
-          // let samecolor=0;
-           
+       
+     let codecolor=[[false,false,false,false],[false,false,false,false],[false,false,false,false],[false,false,false,false]];
   for (let j = 0; j < code.length; j++) {
   
 for (let i = 0; i < usercode.length; i++) {
    if(code[j]===usercode[i].color && i!==j)
    {
-       correctcolor++;
-        break;
+       codecolor[j][i]=true;
+     
+       //break;
+        
    }
   
    
@@ -88,25 +92,34 @@ for (let i = 0; i < usercode.length; i++) {
 
 
 }
-         /**   for (let i = 0; i < code.length; i++) {
+          let samecolor=0;
+          let colorindex=-1;
+          //debugger;   
+      for (let i = 0; i < codecolor.length; i++) {
        
-            for (let j = i+1; j <code.length; j++) {
-                if(code[i]===code[j])
+            for (let j = 0; j <codecolor[i].length; j++) {
+                if(equalcode[i]!==true && codecolor[i][j]===true)
                 {
                   
-                    samecolor++;
+                    correctcolor++;
+                    break;
                     
                 }
                 
                 
             }
               
-           }*/
-    
+           }
+     
       
    
-        correctcolor=correctcolor-correct;
+       console.log(codecolor);
+     console.log(samecolor);
      
+      
+        correctcolor=correctcolor;
+      
+    
          
          
                let arr2=[...pegGuess];
