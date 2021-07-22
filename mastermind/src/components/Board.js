@@ -73,45 +73,83 @@ const Board =({color,code,updateWinner,updateLoser})=>{
            }
        
        
-
-       
-     let codecolor=[[false,false,false,false],[false,false,false,false],[false,false,false,false],[false,false,false,false]];
-  for (let j = 0; j < code.length; j++) {
-  
-for (let i = 0; i < usercode.length; i++) {
-   if(code[j]===usercode[i].color && i!==j)
-   {
-       codecolor[j][i]=true;
-     
-       //break;
-        
-   }
-  
-   
-}
-
-
-}
-         
-         
-          //debugger;   
-      for (let i = 0; i < codecolor.length; i++) {
-       
-            for (let j = 0; j <codecolor[i].length; j++) {
-                if(equalcode[i]!==true && codecolor[i][j]===true)
-                {
-                  
-                    correctcolor++;
-                    break;
-                    
-                }
+    let tempCode=[...code];
+    let tempUserCode=[...usercode];
+       correct=0;
+ //debugger;
+     /**
+for (let j = 0; j < code.length; j++) {
+  let same=0;
+    for (let i = 0; i < usercode.length; i++) {
+    if(code[j]===usercode[i].color && i===j){
+            scolor[j]=true;
+              break;
+           
+    
+        if(code[j]===code[i].color && i!==j){
+            
+          
+                same++;
+               
                 
+             
+           
+        }
+        if(code[j]===usercode[i].color && scolor[j]===false && equalcode[j]!==true){
+            
+            if(i!==j ){
+                correctcolor++;
+                scolor[j]=true;
+               
                 
-            }
-              
-           }
-     
+             }
+           
+        }
+         
+        //correctcolor=correctcolor-same;
       
+       
+    }
+  
+    
+    
+    }    }*/
+/**
+ * 
+ */
+
+for (let i = 0; i < tempUserCode.length; i++) {
+  if(tempUserCode[i].color ===tempCode[i])
+  {
+      correct++;
+      tempUserCode[i].color=-1;
+      tempCode[i]=-1;
+  }
+    
+}
+
+ for (let i = 0; i < tempCode.length; i++) {
+    let notIncluded = true;
+    if(tempCode[i]===-1) continue;
+      for (let j = 0; j < tempUserCode.length; j++) {
+        if(tempUserCode[j].color===-1) continue;
+          else if(tempCode[i]===tempUserCode[j].color){
+              correctcolor++;
+              tempUserCode[j].color=-1;       
+             break;
+          }
+         
+           
+      
+        
+         
+      }
+    
+      
+      
+      }
+     
+
    
      
 
@@ -155,9 +193,9 @@ for (let i = 0; i < usercode.length; i++) {
 return(
 
     
- 
+  
     <div className="playcontainer">
-     
+     {console.log(code)}
         <Row check={check} color={color} index={0} code={code} pegGuess={pegGuess} isdisabled={nextrow[0].row} />
         <Row  check={check} color={color} index={1} code={code} pegGuess={pegGuess} isdisabled={nextrow[1].row} />
         <Row  check={check} color={color} index={2} code={code}  pegGuess={pegGuess} isdisabled={nextrow[2].row} />

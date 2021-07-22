@@ -7,11 +7,13 @@ return(
     
  
     <div className="loserContainer">
+        <h3>You Lost :(</h3>
         <h3>Solution</h3>
      <button    className={`${code[0]} `}  ></button>
      <button    className={`${code[1]} `}  ></button>
      <button   className={`${code[2]} `} ></button>
      <button    className={`${code[3]} `} ></button>
+   
    <div><button onClick={reset}>PLay again</button></div>
       
 </div>
