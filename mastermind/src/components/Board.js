@@ -73,8 +73,18 @@ const Board =({color,code,updateWinner,updateLoser})=>{
            }
        
        
-    let tempCode=[...code];
-    let tempUserCode=[...usercode];
+    let tempCode=[];
+    for (let i = 0; i < code.length; i++) {
+       tempCode.push(code[i]);
+        
+
+    }
+    let tempUserCode=[{color:""},{color:""},{color:""},{color:""}];
+    for (let i = 0; i < code.length; i++) {
+       tempUserCode[i].color=usercode[i].color;
+         
+     }
+   
        correct=0;
  //debugger;
      /**
@@ -117,7 +127,6 @@ for (let j = 0; j < code.length; j++) {
 /**
  * 
  */
-
 for (let i = 0; i < tempUserCode.length; i++) {
   if(tempUserCode[i].color ===tempCode[i])
   {
