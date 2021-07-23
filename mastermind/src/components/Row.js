@@ -7,6 +7,7 @@ const Row =({isdisabled,check,color, pegGuess,index,code})=>{
     const [checkEnabled,setCheckEnabled]=useState(false);
     useEffect(() => {
        setcircle([{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""},{iscolor:false,color:""}])
+       setCheckEnabled(false);
     }, [code])
 
 
