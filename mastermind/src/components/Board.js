@@ -1,5 +1,5 @@
 
-import React,{useEffect,useState}  from "react"
+import React  from "react"
 import Row from "./Row"
 
 const Board =({color,code,check,pegGuess,nextrow})=>{
@@ -15,7 +15,7 @@ return(
     
   
     <div className="playcontainer">
-     {console.log(code)}
+ 
         <Row check={check} color={color} index={0} code={code} pegGuess={pegGuess} isdisabled={nextrow[0].row} />
         <Row  check={check} color={color} index={1} code={code} pegGuess={pegGuess} isdisabled={nextrow[1].row} />
         <Row  check={check} color={color} index={2} code={code}  pegGuess={pegGuess} isdisabled={nextrow[2].row} />

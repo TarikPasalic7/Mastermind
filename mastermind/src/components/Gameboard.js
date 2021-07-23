@@ -135,7 +135,7 @@ tempCode[i]=-1;
 }
 
 for (let i = 0; i < tempCode.length; i++) {
-let notIncluded = true;
+
 if(tempCode[i]===-1) continue;
 for (let j = 0; j < tempUserCode.length; j++) {
   if(tempUserCode[j].color===-1) continue;
